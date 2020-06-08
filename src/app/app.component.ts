@@ -12,6 +12,10 @@ export class AppComponent  {
   name = 'Angular ' + VERSION.major;
   count = 1;
   constructor(private http: HttpClient) {
+    // this.testFlatMap();
+  }
+
+  testFlatMap() {
     of(1, 2, 3, 4, 5, 6, 7, 8, 9, 10)
     .pipe(
       map(eachItem => of(eachItem))
@@ -83,6 +87,5 @@ export class AppComponent  {
     ).subscribe(data =>
       console.log(this.count++, '-->', data)  
     );*/
-    
   }
 }
